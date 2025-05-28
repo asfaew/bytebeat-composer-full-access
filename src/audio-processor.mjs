@@ -28,12 +28,6 @@ class audioProcessor extends AudioWorkletProcessor {
 			delete globalThis[String.fromCharCode(65 + i)];
 			delete globalThis[String.fromCharCode(97 + i)];
 		}
-		// Delete global variables
-		for(const name in globalThis) {
-			if(Object.prototype.hasOwnProperty.call(globalThis, name)) {
-				delete globalThis[name];
-			}
-		}
 	}
 	static freezeGlobals() {
 		Object.getOwnPropertyNames(globalThis).forEach(name => {
